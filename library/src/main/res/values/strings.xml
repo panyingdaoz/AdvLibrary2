@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">即投视播</string>
+    <!--<string name="app_name">即投云播</string>-->
+
+    <string name="buffering">"正在拼命加载中..."</string>
+    <string name="exit_password">"请输入密码"</string>
+    <string name="exit_proxy">"请输入合伙人编码"</string>
+    <!--<string name="domain_name">https://login.xjymedia.com/</string>-->
+    <string name="domain_name">http://login.xjymedia.com/</string>
+    <string name="domain_name2">http://login.xjymedia.com</string>
+    <string name="new_package">com.kingbird.advertise</string>
+    <string name="root_directory_url">Environment.getExternalStorageDirectory()/com.kingbird.advertise</string>
+    <string name="play_remind">"当前没有可以播放的文件！请添加视频文件。"</string>
+    <string name="accessibility_remind">当前设备没有打开智能安装服务，请前往无障碍或者辅助功能菜单下打开智能安装服务！</string>
+    <string name="accessibility_service_description">即投视播智能安装服务，是让您每次应用升级时，只能帮您点击所需的按钮，不需要您一直对着屏幕操作。
+        并且此功能完全不需要TOOT您的设备，只需要您打开服务。</string>
+    <string name="intelligent_installation">智能安装服务</string>
+    <string name="hotel_text">请尽快添加您想要发布的内容吧！</string>
+    <string name="tissue_text">纸巾已领完</string>
+    <string name="tissue_text2">纸巾已领完，请耐心等待！</string>
+    <string name="tissue_text3">不好意思设备维护中！</string>
+    <string name="qrCode_failure">二维码加载失败，请检查网络或者重启软件！</string>
+    <string name="red_packet">"扫码领红包！"</string>
+    <string name="device_network">当前设备网络可用！</string>
+    <string name="no_device_network">当前设备网络不可用！</string>
+    <string name="tips_hasRedPacket">即将进入整点抢红包时间！</string>
+    <string name="start_hasRedPacket">现在是整点抢红包时间！</string>
+    <string name="splite_show">"副屏文字显示已经取消，请投放图片。"</string>
+    <string name="str_zhijin">"纸巾"</string>
+    <string name="input_code1">输入编号</string>
+    <string name="input_code">1235</string>
+    <string name="sure">确认</string>
+    <string name="_6">6</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_0">0</string>
+    <!--<string name="test_notice">今日本商场家电柜所有商品打六折！</string>-->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--<string name="title_activity_home_page">HomePageActivity</string>-->
+
+    <!--<string name="net_change_to_4g">Network switched to cell-network</string>-->
+    <!--<string name="net_change_to_wifi">Network switched to WIFI</string>-->
+    <!--<string name="net_disconnect">Network disconnected</string>-->
+    <!--<string name="toast_fail_msg">Fail!! Reason:</string>-->
+    <!--<string name="toast_prepare_success">Prepared successfully</string>-->
+
+</resources>
