@@ -465,6 +465,10 @@ public class AdvertistingView extends FrameLayout {
         SharedPreferencesUtils.writeString(activity, Const.MAIN_APP_NAME, packageName);
     }
 
+    public void bindDealer(String code) {
+        Base.bindDealer(context, code);
+    }
+
     public void videoStop() {
         if (mVideoView != null) {
             mVideoView.stopPlayback();
