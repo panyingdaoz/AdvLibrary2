@@ -22,7 +22,7 @@ allprojects {
         maven { url 'http://106.13.41.67:8081/repository/maven-public/' }
         maven {
             // https://github.com/panyigndaoz/Maventest
-            url "https://raw.githubusercontent.com/panyingdaoz/AdvRely/master"
+            url "https://raw.githubusercontent.com/panyingdaoz/AdvRely2/master"
         }
     }
 }
