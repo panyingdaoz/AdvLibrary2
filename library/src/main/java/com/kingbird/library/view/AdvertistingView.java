@@ -580,10 +580,10 @@ public class AdvertistingView extends FrameLayout {
     @SuppressLint("HandlerLeak")
     private class MyHandler extends Handler {
 
-        private WeakReference<AdvertistingView> mActivity;
+        private WeakReference<AdvertistingView> Advertisting;
 
         private MyHandler(AdvertistingView activity) {
-            mActivity = new WeakReference<>(activity);
+            Advertisting = new WeakReference<>(activity);
         }
 
         /**
@@ -592,7 +592,7 @@ public class AdvertistingView extends FrameLayout {
          */
         @Override
         public void handleMessage(@NonNull Message msg) {
-            AdvertistingView activity = mActivity.get();
+            AdvertistingView activity = Advertisting.get();
             List<Parameter> parameters = LitePal.findAll(Parameter.class);
             for (Parameter parameter : parameters) {
                 String id = parameter.getDeviceId();
