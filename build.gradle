@@ -19,9 +19,10 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
-        maven { url 'http://106.13.41.67:8081/repository/maven-public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.jdmomedia.com/repository/maven-public/' }
         maven {
-            // https://github.com/panyigndaoz/Maventest
+            // https://github.com/panyigndaoz/test
             url "https://raw.githubusercontent.com/panyingdaoz/AdvRely2/master"
         }
     }

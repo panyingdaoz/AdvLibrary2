@@ -81,7 +81,7 @@ dependencies {
     implementation 'com.jaredrummler:android-processes:1.1.1'
 
     // 京东钼媒
-    implementation 'ad.kuaifa.com:kuaifa-sdk-ad:1.0.12'
+    implementation 'ad.kuaifa.com:kuaifa-sdk-ad:1.0.13'
 }
 
 // 命令 gradlew :maventest:uploadArchives
