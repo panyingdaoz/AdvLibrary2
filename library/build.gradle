@@ -84,7 +84,7 @@ dependencies {
     implementation 'ad.kuaifa.com:kuaifa-sdk-ad:1.0.13'
 }
 
-// 命令 gradlew :maventest:uploadArchives
+// 命令 gradlew :library:uploadArchives
 apply plugin: 'maven'
 uploadArchives {
     repositories.mavenDeployer {
@@ -93,7 +93,7 @@ uploadArchives {
         pom.project {
             groupId "com.kingbird.maventest" // 可以随意取，一般取包名
             artifactId "maven" // 可以随意取，一般取库的名字
-            version "1.0.3" // 版本号
+            version "1.0.4" // 版本号
         }
     }
 }
