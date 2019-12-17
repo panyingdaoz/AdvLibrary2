@@ -93,7 +93,7 @@ uploadArchives {
         pom.project {
             groupId "com.kingbird.maventest" // 可以随意取，一般取包名
             artifactId "maven" // 可以随意取，一般取库的名字
-            version "1.0.4" // 版本号
+            version "1.0.5" // 版本号
         }
     }
 }
