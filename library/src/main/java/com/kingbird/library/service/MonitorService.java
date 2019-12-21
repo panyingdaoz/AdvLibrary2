@@ -28,6 +28,7 @@ import com.kingbird.library.manager.ThreadManager;
 import com.kingbird.library.manager.UdpManager;
 import com.kingbird.library.utils.Const;
 import com.kingbird.library.utils.MyLocationListener;
+import com.kingbird.library.utils.Plog;
 import com.kingbird.library.utils.SharedPreferencesUtils;
 import com.kingbirdle.advertistingjar.base.UdpIoHandlerAdapter;
 import com.kuaifa.ad.KuaiFaClient;
@@ -151,6 +152,7 @@ public class MonitorService extends Service implements UdpIoHandlerAdapter.UdpIo
     private int isIntervalTime;
     private String fileMd5;
     private static ArrayList<String> intervalTimeArray = new ArrayList<>();
+    private ArrayList<String> fileList = new ArrayList<>();
     byte[] sendCommand = new byte[1];
     byte[] sendNumber = new byte[1];
 
@@ -287,6 +289,8 @@ public class MonitorService extends Service implements UdpIoHandlerAdapter.UdpIo
             int day = getAnIntHex(data, 8, 1, 16);
             if (day < CONSTANT_TEN) {
                 strDay = "0" + day;
+            }else {
+                strDay = Integer.toString(day);
             }
             if (month < CONSTANT_TEN) {
                 packge = year + "-" + "0" + month + "-" + strDay;
@@ -302,9 +306,13 @@ public class MonitorService extends Service implements UdpIoHandlerAdapter.UdpIo
             assert subFiles != null;
             KLog.e("数组大小：" + subFiles.length);
             for (File f : subFiles) {
-                KLog.e("获取到的文件名：" + f.getName());
-                Base.postLog(this, deviceId, f.getName());
+                String fileName = f.getName();
+                fileList.add(fileName);
+//                KLog.e("获取到的文件名：" + f.getName());
+//                Base.postLog(this, deviceId, f.getName());
             }
+            Plog.e("fileList集合大小：" + fileList.size());
+            Base.postLog2(this, deviceId, path, fileList);
         } catch (Exception e) {
             KLog.e("异常原因：" + e.toString());
         }

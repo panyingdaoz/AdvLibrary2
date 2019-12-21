@@ -2347,6 +2347,59 @@ public class Base {
     }
 
     /**
+     * 上传本地log文件
+     */
+    public static void postLog2(Context context, final String deviceId, String path, ArrayList<String> fileList) {
+        String fileName;
+        if (fileList.size() > 0) {
+            fileName = fileList.get(0);
+            String paths = path + "/" + fileName;
+            Plog.e("文件名：" + fileName);
+            String content = readFileContent(paths);
+            Plog.e("文本文件大小：" + content.length());
+
+            AppLog.DataBean app = new AppLog.DataBean();
+            app.setFilename(fileName);
+            app.setContent(content);
+
+            AppLog appLog = new AppLog();
+            appLog.setKey("kingbird2019");
+            appLog.setData(app);
+
+//        Plog.e("log文件: " + JSON.toJSONString(appLog));
+            MyOkHttp myOkHttp = new MyOkHttp();
+            myOkHttp.post()
+                    .url(APP_LOG)
+                    .jsonParams(JSON.toJSONString(appLog))
+                    .tag(context)
+                    .enqueue(new JsonResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, JSONObject response) {
+                            fileList.remove(0);
+                            postLog2(context, deviceId, path, fileList);
+                            Plog.e("doPostJSON log上传成功:" + response);
+                            byte[] dataLan = ProtocolDao.appLogAnswer(deviceId, true);
+                            ProtocolManager.getInstance().netDataAnser(dataLan);
+                        }
+
+                        @Override
+                        public void onSuccess(int statusCode, JSONArray response) {
+                            Plog.e("doPostJSON log上传成功:" + response);
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, String errorMsg) {
+                            Plog.e("doPostJSON log上传失败:" + errorMsg);
+                            byte[] dataLan = ProtocolDao.appLogAnswer(deviceId, false);
+                            ProtocolManager.getInstance().netDataAnser(dataLan);
+                        }
+                    });
+        } else {
+            Plog.e("文件集合为空");
+        }
+    }
+
+    /**
      * 读取指定log文件数据
      */
     private static String readFileContent(final String fileName) {
